@@ -1,0 +1,45 @@
+﻿<Window x:Class="Phones.UI.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Contact" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None">
+    <Window.Resources>
+        <SolidColorBrush x:Key="WhiteSolidColorBrush" Color="#FF484848"/>
+    </Window.Resources>
+    <Grid>
+        <Border Width="auto" Height="auto" BorderBrush="#FF119DFF" BorderThickness="2"
+                CornerRadius="0,30,0,30">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientBrush.GradientStops>
+                        <GradientStopCollection>
+                            <GradientStop Color="#e7ebf7" Offset="0.0"></GradientStop>
+                            <GradientStop Color="#cee3ff" Offset="0.5"></GradientStop>
+                        </GradientStopCollection>
+                    </GradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Name="contactFields">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Name="Title1" Text="Add Contact" Padding="5"></TextBlock>
+                <Grid Grid.Row="1" Background="#B5CBEF">
+                    <TextBox x:Name="contactName" HorizontalAlignment="Left" Height="23" Margin="140,96,0,0" TextWrapping="Wrap" Text="{Binding Path=contactName}" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="phoneNum" HorizontalAlignment="Left" Height="23" Margin="140,134,0,0" TextWrapping="Wrap" Text="{Binding Path=phoneNum}" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="ФИО контакта:" HorizontalAlignment="Left" Margin="49,96,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Номер телефона:" HorizontalAlignment="Left" Margin="35,134,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Данные о контакте" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" FontSize="18"/>
+                    <Button Content="Сохранить" HorizontalAlignment="Left" Margin="49,185,0,0" VerticalAlignment="Top" Width="75" Click="okButton_Click"/>
+                    <Button Content="Отмена" HorizontalAlignment="Left" Margin="185,185,0,0" VerticalAlignment="Top" Width="75" Click="cancelButton_Click"/>
+                    <TextBlock x:Name="validateText" HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="Контакт создать не удалось. Проверьте правильность заполнения полей" VerticalAlignment="Top" Width="272" TextAlignment="Center" Foreground="#FFF90707" Visibility="Collapsed"/>
+                </Grid>
+                <TextBlock Text="" Padding="5" Grid.Row="2" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+
+                
